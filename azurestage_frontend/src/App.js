@@ -1,24 +1,22 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import SignIn from './Components/SignIn';
+import SignUp from './Components/SignUp';
+import NotFound from './Components/NotFound';
+import Home from './Components/Home';
 
 function App() {
   return (
-    <h1>Hamza</h1>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+    <>
+    <Routes>
+      <Route path='/signin' element={<SignIn></SignIn>}></Route>
+      <Route path='/signup' element={<SignUp></SignUp>}></Route>
+      <Route path='*' element={<NotFound></NotFound>}></Route>
+      <Route path='/' element={<Home></Home>}></Route>
+    </Routes>
+    
+    </>
+  
   );
 }
 
